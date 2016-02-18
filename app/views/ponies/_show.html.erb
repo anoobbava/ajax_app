@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pony.name %>
+</p>
+
+<p>
+  <strong>Profession:</strong>
+  <%= @pony.profession %>
+</p>
+
+<%= link_to 'Edit', edit_pony_path(@pony) %> |
+<%= link_to 'Back', ponies_path %>

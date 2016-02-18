@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ponies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Profession</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ponies.each do |pony| %>
+      <tr>
+        <td><%= pony.name %></td>
+        <td><%= pony.profession %></td>
+        <td><%= link_to 'Show', pony, remote: true %></td>
+        <td><%= link_to 'Edit', edit_pony_path(pony), {remote: true} %></td>
+        <td><%= link_to 'Destroy', pony, method: :delete, data: { confirm: 'Are you sure?' },
+        :remote => true, :class =>'delete_pony'%></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pony', new_pony_path, remote: true %>
+
+<div id = "ajax_edit"></div>
+<div id = "ajax_show"></div>
+<div id = "ajax_new"></div>
